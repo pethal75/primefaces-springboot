@@ -1,0 +1,12 @@
+/* Place any CSS here you want loaded in index.xhtml */
+.header {
+    padding: 5px 60px;
+    text-align: left;
+    background: #1abc9c;
+    color: white;
+    font-size: 20px;
+}
+
+.ui-panel .ui-panel-content {
+    padding: 0;
+}

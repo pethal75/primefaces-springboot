@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+	xmlns:jsf="http://xmlns.jcp.org/jsf"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <title>PrimeFaces Test</title>
+        <h:outputScript name="test.js" />
+        <h:outputStylesheet name="test.css" />
+    </h:head>
+    <h:body>
+
+        <div class="header">
+            <h1>#{applicationInfoView.projectName}</h1>
+        </div>
+
+        <br/>
+
+        <p:menubar>
+            <p:submenu label="Mail">
+                <p:menuitem value="Gmail" url="http://www.google.com" />
+                <p:menuitem value="Hotmail" url="http://www.hotmail.com" />
+                <p:menuitem value="Yahoo Mail" url="http://mail.yahoo.com" />
+            </p:submenu>
+            <p:submenu label="Videos">
+                <p:menuitem value="Youtube" url="http://www.youtube.com" />
+                <p:menuitem value="Break" url="http://www.break.com" />
+            </p:submenu>
+        </p:menubar>
+
+        <br/>
+
+        <h:form id="frmTest" enctype="multipart/form-data">
+            <h:outputText id="businessUnit"
+                          styleClass="fieldValue"
+                          value="#{fileUploadManagedBean.getName()}" />
+
+
+            <p:fileUpload listener="#{fileUploadManagedBean.handleUpload}" mode="advanced" multiple="true" update="messages"/>
+
+            <p:growl id="messages" showDetail="true" keepAlive="true"/>
+        </h:form>
+
+        <p:panel header="Editor panel">
+
+            <p:textEditor/>
+
+            <f:facet name="footer">
+                <h:outputText value="Footer Text" />
+            </f:facet>
+        </p:panel>
+
+    </h:body>
+</html>
